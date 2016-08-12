@@ -19,10 +19,18 @@
 <nav class="navbar navbar-default">
 	<div class="container">
 		<div class="navbar-brand"><%=link_to "Palomitas XYZ", root_path%></div>
-		<ul class="nav navbar-nav navbar-right">
-			<li><%= link_to "Agregar película", new_movie_path %></li>
-			<li><%= link_to "Salir", root_path %></li>
-		</ul>
+			<% if user_signed_in? %>
+				<ul class="nav navbar-nav navbar-right">
+					<li><%= link_to "Añadir película",new_movie_path%></li>
+					<li><%= link_to "Mi cuenta",edit_user_registration_path%></li>
+					<li><%= link_to "Salir",destroy_user_session_path, method: :delete%></li>
+				</ul>
+			<%else %>
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "Ingresar",new_user_session_path%></li>
+					<li><%= link_to "Registrarme",new_user_registration_path%></li>
+			</ul>
+			<%end%>
 	</div>
 </nav>
 

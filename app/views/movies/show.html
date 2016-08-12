@@ -7,7 +7,10 @@
 <p><%= simple_format @movie.description%></p>
 
 <%= link_to "Regresar", root_path, class:"btn btn-default" %>
+
+<% if user_signed_in? %>
 <%= link_to "Editar", edit_movie_path,class:"btn btn-default"%>
 <%= link_to "Eliminar", movie_path, method: :delete, data:{confirm: "¿Estas seguro?"},class:"btn btn-default"%>
+<%end%>
 </div>
 </div>
