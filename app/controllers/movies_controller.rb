@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
 	before_action :find_movie, only: [:show,:edit,:update,:destroy]
 	before_action :authenticate_user!, except: [:index,:show]
+	before_filter :require_permission, only: [:edit]
 	def index
 		@movie = Movie.all.order("created_at DESC")
 	end
@@ -29,6 +30,13 @@ class MoviesController < ApplicationController
 	def destroy
 		@movie.destroy
 		redirect_to root_path, notice: "Se ha eliminado correctamente tu película"
+	end
+
+	def require_permission
+  	if current_user != Movie.find(params[:id]).user
+    redirect_to root_path
+    #Or do something else here
+  	end
 	end
 
 	private 
