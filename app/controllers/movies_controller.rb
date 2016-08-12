@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
 	before_action :find_movie, only: [:show,:edit,:update,:destroy]
 	before_action :authenticate_user!, except: [:index,:show]
-	before_filter :require_permission, only: [:edit]
+	before_filter :require_permission, only: [:edit,:destroy]
 	def index
 		@movie = Movie.all.order("created_at DESC")
 	end
