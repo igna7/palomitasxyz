@@ -1,0 +1,7 @@
+<%= image_tag @movie.cover.url(:medium, class:"movie-cover") %>
+<h1><%= @movie.title%></h1>
+<p><%= @movie.description%></p>
+
+<%= link_to "Regresar", root_path, class:"btn btn-default" %>
+<%= link_to "Editar", edit_movie_path,class:"btn btn-default"%>
+<%= link_to "Eliminar", movie_path, method: :delete, data:{confirm: "¿Estas seguro?"},class:"btn btn-default"%>

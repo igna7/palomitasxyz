@@ -7,8 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if notice %>
+<div id="notice_wrapper">
+	<p class="notice"><%= notice %></p>
+</div>
+<%elsif alert %>
+<div id="notice_wrapper">
+	<p class="alert"><%= alert %></p>
+</div>
+<%end%>
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-brand"><%=link_to "Palomitas XYZ", root_path%></div>
+		<ul class="nav navbar-nav navbar-right">
+			<li><%= link_to "Agregar película", new_movie_path %></li>
+			<li><%= link_to "Salir", root_path %></li>
+		</ul>
+	</div>
+</nav>
+
 
 <%= yield %>
+
+<script>
+	$(document).ready(function(){
+		setTimeout(function(){
+			$('#notice_wrapper').fadeOut("slow",function(){
+				$(this).remove();
+			})
+		},3500);
+	});
+</script>
 
 </body>
 </html>

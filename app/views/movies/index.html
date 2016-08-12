@@ -1,0 +1,15 @@
+<% @movie.each_slice(6) do |movies| %>
+<div class="row carrusel">
+	<% movies.each do |movie| %>
+	<div class="col-md-2 col-xs-5 col-xs-offset-1 col-md-offset-0">
+		<div class="movie">
+			<div class="image_wrapper">
+				<%= link_to movie do %>
+				<%= image_tag movie.cover.url(:thumb)%>
+				<%end%>
+			</div>
+		</div>
+	</div>
+	<%end%>
+</div>
+<%end%>
