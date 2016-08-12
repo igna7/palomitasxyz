@@ -14,32 +14,10 @@
 
 <div class="panel-body">
 	<%= f.input :cover,label:"Imagen de portada:",class:'form-control' %>
-	<%= f.input :title,label:"Pelicula:",placeholder:"Escríbe el título de la película",class:'form-control' %>
- 	<%= f.input :description,label:"Sinopsis:",placeholder:"Escríbe la sinopsis de la película", class:'form-control' %>
- 	<div class="row">
- 		<div class="col-md-6">
- 			<h3>Enlaces descarga</h3>
- 			<div id="descargas">
- 				<%= f.simple_fields_for :descargas do |descarga|%>
- 				<%= render 'descarga_fields', f: descarga%>
- 				<div class="links">
- 					<%= link_to_add_association 'Añadir enlace',f,:descargas,class:"btn btn-default add-button"%>
- 				</div>
- 				<%end%>
- 			</div>
- 		</div>
- 		<div class="col-md-6">
- 			<h3>Enlaces ver online</h3>
- 			<div id="onlines">
- 				<%= f.simple_fields_for :onlines do |online|%>
- 				<%= render 'online_fields', f: online%>
- 				<div class="links">
- 					<%= link_to_add_association 'Añadir enlace',f,:onlines,class:"btn btn-default add-button"%>
- 				</div>
- 				<%end%>
- 			</div>
- 		</div>
- 	</div>
+	<h4>*Título:</h4>
+	<%= f.text_field :title,placeholder:"Escríbe el título de la película",size: "30x5",class:'form-control' %>
+	<h4>*Sinopsis:</h4>
+ 	<%= f.text_area :description,placeholder:"Escríbe la sinopsis de la película", size: "30x10",class:'form-control sinopsis-area' %>
  	<%= f.button :submit,"Guardar pelicula",class:"btn btn-primary"%>
 </div>	
 <% end %>

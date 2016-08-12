@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PalomitasXyz</title>
+  <title>Palomitas XYZ - Tan fácil como hacer tus palomitas...</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -26,18 +26,24 @@
 	</div>
 </nav>
 
-
-<%= yield %>
-
+<div class="ads"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- palomitasxyz -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-3496391728830771"
+     data-ad-slot="6227218043"></ins>
 <script>
-	$(document).ready(function(){
-		setTimeout(function(){
-			$('#notice_wrapper').fadeOut("slow",function(){
-				$(this).remove();
-			})
-		},3500);
-	});
-</script>
-
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<%= yield %>
+<div class="ads-bottom"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- palomitas2 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:320px;height:100px"
+     data-ad-client="ca-pub-3496391728830771"
+     data-ad-slot="6087617241"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
 </body>
 </html>

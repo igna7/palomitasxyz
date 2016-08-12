@@ -11,16 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812051609) do
-
-  create_table "descargas", force: :cascade do |t|
-    t.string   "link"
-    t.integer  "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "descargas", ["movie_id"], name: "index_descargas_on_movie_id"
+ActiveRecord::Schema.define(version: 20160812094247) do
 
   create_table "movies", force: :cascade do |t|
     t.string   "title"
@@ -33,14 +24,5 @@ ActiveRecord::Schema.define(version: 20160812051609) do
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
   end
-
-  create_table "onlines", force: :cascade do |t|
-    t.string   "link"
-    t.integer  "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "onlines", ["movie_id"], name: "index_onlines_on_movie_id"
 
 end

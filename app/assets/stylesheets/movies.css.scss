@@ -8,6 +8,28 @@
 	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
 }
 $red: #009688;
+.contenido{
+	width: 100%;
+	padding-left: 15%;
+}
+.portada{
+	float: left;
+	width: 30%;
+}
+.ads{
+	margin: 0 auto;
+	padding-left: 35%;
+	padding-bottom: 20px;
+}
+.ads-bottom{
+	margin: 0 auto;
+	padding-left: 35%;
+	margin-top: 20px;
+}
+.sinopsisenlaces{
+	padding-left: 20px;
+	width: 70%;
+}
 body {
 	background: rgb(235, 238, 243);
 }
@@ -69,16 +91,6 @@ body {
 	}
 }
 
-#descargas, #onlines {
-	margin-bottom: 50px;
-	ul, ol {
-		padding-left: 18px;
-		li {
-			padding: 1em 0;
-			border-bottom: 1px solid #EAEAEA;
-		}
-	}
-}
 
 .form-inline {
 	margin-top: 15px;

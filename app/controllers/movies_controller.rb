@@ -32,7 +32,7 @@ class MoviesController < ApplicationController
 
 	private 
 	def movie_params
-		params.require(:movie).permit(:title,:description,:cover, descargas_attributes: [:id, :link, :_destroy], onlines_attributes: [:id, :link, :_destroy])
+		params.require(:movie).permit(:title,:description,:cover)
 	end
 	def find_movie
 		@movie = Movie.find(params[:id])
